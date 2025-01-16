@@ -1,0 +1,21 @@
+{
+  "name": "quickstart",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "tsc && vite build && airmoney-cli serve -lf dist",
+    "upload": "tsc && vite build && airmoney-cli upload -lf dist"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.1"
+  },
+  "dependencies": {
+    "airmoney-sdk": "file:./libs/airmoney-sdk-v3.0.5.tgz",
+    "vite-plugin-singlefile": "^2.1.0"
+  }
+}
