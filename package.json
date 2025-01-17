@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "tsc && vite build && airmoney-cli serve -lf dist",
-    "upload": "tsc && vite build && airmoney-cli upload -lf dist"
+    "serve": "tsc && vite build && airmoney-cli serve -f dist",
+    "upload": "tsc && vite build && airmoney-cli upload -f dist"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
