@@ -1,8 +1,8 @@
 {
     "name": "quickstart-pack",
     "identifier": "com.degn.quickstart-pack",
-    "author": "jhon doe",
+    "author": "john doe",
     "version": "0.1.0",
-    "maintainer": "jhon doe",
+    "maintainer": "john doe",
     "url": "https://github.com/Air-Money/airmoney-dapp-quickstart"
 }

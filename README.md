@@ -5,6 +5,9 @@ this document will help you create and publish your first dapp
 * npm
 * solana wallet extension on browser
 
+
+## Request whitelist access
+Contact the Airmoney team and share your Solana wallet address to be whitelisted
 ## Install airmoney-cli
 you can install it by running `npm install airmoney-cli -g`
 ## Register developer
@@ -35,9 +38,9 @@ after creating the new project you have to update the `metadata.json` with your 
 {
     "name": "quickstart-pack",
     "identifier": "com.degn.quickstart-pack",
-    "author": "jhon doe",
+    "author": "john doe",
     "version": "0.1.0",
-    "maintainer": "jhon doe",
+    "maintainer": "john doe",
     "url": "https://github.com/Air-Money/airmoney-dapp-quickstart"
 }
 ```
@@ -47,8 +50,12 @@ the building process can be done by running `npm run build`<br>
 this command will compile and bundle the images into a single html file and store it in dist
 
 ### Simulator
-this is a WIP tool to simulate the behavior of Airmoney in the browser<br>
+this is a WIP tool to simulate the behavior of the Airmoney hardware device in the browser<br>
 to run the simulator you can run the command `npm run serve` or `airmoney-cli serve -f dist`<br>
+in most cases you will probably run it from your project directory using `-f dist`
+
+* Note, the simulator is currently intended to help simulate the UI/UX of the device's various screens and buttons/dials. Functionality like wallet, camera, fingerprint sensor etc are not currently part of the simulator. We are looking to include these in a future version
+
 ```
 Usage: airmoney-cli serve [options]
 
@@ -64,4 +71,5 @@ Options:
 ## Submitting to dappstore
 to submit you can run the command `npm run upload` or `airmoney-cli upload -f dist`<br>
 after the dapp is successfully submitted, you will need to check the packages in https://dash-devnet.air.fun/<br>
-and click on the action button **sign and submit**
+select the appropriate Category for your dapp and then click **Register Dapp**
+then finally click on the action button **sign and submit**
