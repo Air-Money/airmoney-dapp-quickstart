@@ -16,7 +16,7 @@ you can install it by running `npm install airmoney-cli -g`
 3) generate API key
 
 to set up you enviroment copy your API key an run the command <br>
-`airmoney-cli setup --user-address <wallet> --api-key <key>`<br>
+`airmoney-cli setup --user <wallet> --key <key>`<br>
 **Note - your api key will get invalidated after one day, after while you'll need to generate a new one**
 ## Creating new project
 ```
