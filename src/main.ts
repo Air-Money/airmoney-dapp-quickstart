@@ -22,11 +22,33 @@ document.getElementById('display-image-device')?.addEventListener('click', () =>
      */
     imageName: 'moon-it.jpeg',
   });
+  deviceController.displayImage({
+    id: AMDeviceScreen.Right,
+    /**
+     * [Optional] Leave empty string for passing this prop
+     */
+    base64Image: jpgImage,
+    /**
+     * [Required], the image name placed in device
+     */
+    imageName: 'moon-it.jpeg',
+  });
 });
 document.getElementById('display-gif-device')?.addEventListener('click', () => {
   const deviceController = new AMDeviceScreenController();
   deviceController.displayGif({
     id: AMDeviceScreen.Left,
+    /**
+     * [Optional] Leave empty string for passing this prop
+     */
+    base64Image: gifImage,
+    /**
+     * [Required], the image name placed in device
+     */
+    imageName: 'ledger.gif',
+  });
+  deviceController.displayGif({
+    id: AMDeviceScreen.Right,
     /**
      * [Optional] Leave empty string for passing this prop
      */
@@ -50,11 +72,33 @@ document.getElementById('display-image-simulator')?.addEventListener('click', ()
      */
     imageName: 'moon-it.jpeg',
   });
+  deviceController.displayImage({
+    id: AMDeviceScreen.Right,
+    /**
+     * [Required]
+     */
+    base64Image: jpgImage,
+    /**
+     * [Optional]
+     */
+    imageName: 'moon-it.jpeg',
+  });
 });
 document.getElementById('display-gif-simulator')?.addEventListener('click', () => {
   const deviceController = new AMSimulatorDeviceController();
   deviceController.displayGif({
     id: AMDeviceScreen.Left,
+    /**
+     * [Required]
+     */
+    base64Image: gifImage,
+    /**
+     * [Optional]
+     */
+    imageName: 'ledger.gif',
+  });
+  deviceController.displayGif({
+    id: AMDeviceScreen.Right,
     /**
      * [Required]
      */
@@ -78,11 +122,33 @@ document.getElementById('display-image-all')?.addEventListener('click', () => {
      */
     imageName: 'moon-it.jpeg',
   });
+  screenManager.displayImage({
+    id: AMDeviceScreen.Right,
+    /**
+     * [Required] for setting in simulator
+     */
+    base64Image: jpgImage,
+    /**
+     * [Required] for setting in device
+     */
+    imageName: 'moon-it.jpeg',
+  });
 });
 document.getElementById('display-gif-all')?.addEventListener('click', () => {
   const screenManager = new AMScreenManager(new AMDeviceScreenController(), new AMSimulatorDeviceController());
   screenManager.displayGif({
     id: AMDeviceScreen.Left,
+    /**
+     * [Required] for setting in simulator
+     */
+    base64Image: gifImage,
+    /**
+     * [Required] for setting in device
+     */
+    imageName: 'ledger.gif',
+  });
+  screenManager.displayGif({
+    id: AMDeviceScreen.Right,
     /**
      * [Required] for setting in simulator
      */
