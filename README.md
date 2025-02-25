@@ -71,5 +71,5 @@ Options:
 ## Submitting to dappstore
 to submit you can run the command `npm run upload` or `airmoney-cli upload -f dist`<br>
 after the dapp is successfully submitted, you will need to check the packages in https://dash-devnet.air.fun/<br>
-select the appropriate Category for your dapp and then click **Register Dapp**
+select the appropriate Category for your dapp and then click **Register Dapp**<br>
 then finally click on the action button **sign and submit**
