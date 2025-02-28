@@ -54,7 +54,7 @@ this is a WIP tool to simulate the behavior of the Airmoney hardware device in t
 to run the simulator in an already bundled file you can run the command `npm run serve` or `airmoney-cli serve -f dist`<br>
 in most cases you will probably run it from your project directory using `-f dist`<br>
 in the case where you are actively coding and using HMR (Hot Module Replacement) you will need to use the option `-u, --app-url` and specify the url where the dev server is running<br>
-Note, because of the inner workings of the simulator allowing HMR to work, you will have to update the HMR websocket port to correclty point to the dev server and not the simulator
+Note, because of the inner workings of the simulator allowing HMR to work, you will have to update the HMR websocket port to correclty point to the dev server and not the simulator<br>
 this example in vite
 ```
 server:{
