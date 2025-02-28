@@ -51,9 +51,16 @@ this command will compile and bundle the images into a single html file and stor
 
 ### Simulator
 this is a WIP tool to simulate the behavior of the Airmoney hardware device in the browser<br>
-to run the simulator you can run the command `npm run serve` or `airmoney-cli serve -f dist`<br>
-in most cases you will probably run it from your project directory using `-f dist`
-
+to run the simulator in an already bundled file you can run the command `npm run serve` or `airmoney-cli serve -f dist`<br>
+in most cases you will probably run it from your project directory using `-f dist`<br>
+in the case where you are actively coding and using HMR (Hot Module Replacement) you will need to use the option `-u, --app-url` and specify the url where the dev server is running<br>
+Note, because of the inner workings of the simulator allowing HMR to work, you will have to update the HMR websocket port to correclty point to the dev server and not the simulator
+this example in vite
+```
+server:{
+  'hmr': {port:5173}
+}
+```
 * Note, the simulator is currently intended to help simulate the UI/UX of the device's various screens and buttons/dials. Functionality like wallet, camera, fingerprint sensor etc are not currently part of the simulator. We are looking to include these in a future version
 
 ```
@@ -62,10 +69,12 @@ Usage: airmoney-cli serve [options]
 Serve locally in the simulator
 
 Options:
-  -p, --port <number>      Port (default: "4040")
-  -f, --app-path <string>  path where project is located
-  --no-browser             stop browser from being open
-  -h, --help               display help for command
+  -p, --port <number>            Port (default: "4040")
+  -f, --index-app-path <string>  path for the index.html (default: "./")
+  --no-browser                   stop browser from being open
+  -i, --button-image <string>    path for the button images (default: "assets")
+  -u, --app-url <string>         url where the app is running
+  -h, --help                     display help for command
 ```
 
 ## Submitting to dappstore
