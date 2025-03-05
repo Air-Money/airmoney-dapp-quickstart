@@ -26,4 +26,3 @@ yarn-error.log*
 /.idea/modules.xml
 /.idea/vcs.xml
 /dist/*
-/.env
