@@ -1,167 +1,35 @@
 import {
-  AMScreenManager,
-  AMDeviceScreenController,
-  AMSimulatorDeviceController,
-  AMDeviceScreen,
-  AMKeyEventListener,
+  AMServiceScreen,
   AMKey,
-} from 'airmoney-sdk';
-import gifImage from './assets/ledger.gif';
-import jpgImage from './assets/moon-it.jpeg';
+  AirMoneyService,
+  AirMoneyKeyEvent,
+  AMEvent,
+} from '@airmoney-degn/controller-sdk';
 
-document.getElementById('display-image-device')?.addEventListener('click', () => {
-  const deviceController = new AMDeviceScreenController();
-  deviceController.displayImage({
-    id: AMDeviceScreen.Left,
-    /**
-     * [Optional] Leave empty string for passing this prop
-     */
-    base64Image: jpgImage,
-    /**
-     * [Required], the image name placed in device
-     */
+const airmoneyService = new AirMoneyService();
+document.getElementById('display-image')?.addEventListener('click', () => {
+  airmoneyService.setImage({
+    id: AMServiceScreen.Left,
     imageName: 'moon-it.jpeg',
   });
-  deviceController.displayImage({
-    id: AMDeviceScreen.Right,
-    /**
-     * [Optional] Leave empty string for passing this prop
-     */
-    base64Image: jpgImage,
-    /**
-     * [Required], the image name placed in device
-     */
+  airmoneyService.setImage({
+    id: AMServiceScreen.Right,
     imageName: 'moon-it.jpeg',
   });
 });
-document.getElementById('display-gif-device')?.addEventListener('click', () => {
-  const deviceController = new AMDeviceScreenController();
-  deviceController.displayGif({
-    id: AMDeviceScreen.Left,
-    /**
-     * [Optional] Leave empty string for passing this prop
-     */
-    base64Image: gifImage,
-    /**
-     * [Required], the image name placed in device
-     */
+document.getElementById('display-gif')?.addEventListener('click', () => {
+  airmoneyService.setAnimate({
+    id: AMServiceScreen.Left,
     imageName: 'ledger.gif',
   });
-  deviceController.displayGif({
-    id: AMDeviceScreen.Right,
-    /**
-     * [Optional] Leave empty string for passing this prop
-     */
-    base64Image: gifImage,
-    /**
-     * [Required], the image name placed in device
-     */
-    imageName: 'ledger.gif',
-  });
-});
-document.getElementById('display-image-simulator')?.addEventListener('click', () => {
-  const deviceController = new AMSimulatorDeviceController();
-  deviceController.displayImage({
-    id: AMDeviceScreen.Left,
-    /**
-     * [Required]
-     */
-    base64Image: jpgImage,
-    /**
-     * [Optional]
-     */
-    imageName: 'moon-it.jpeg',
-  });
-  deviceController.displayImage({
-    id: AMDeviceScreen.Right,
-    /**
-     * [Required]
-     */
-    base64Image: jpgImage,
-    /**
-     * [Optional]
-     */
-    imageName: 'moon-it.jpeg',
-  });
-});
-document.getElementById('display-gif-simulator')?.addEventListener('click', () => {
-  const deviceController = new AMSimulatorDeviceController();
-  deviceController.displayGif({
-    id: AMDeviceScreen.Left,
-    /**
-     * [Required]
-     */
-    base64Image: gifImage,
-    /**
-     * [Optional]
-     */
-    imageName: 'ledger.gif',
-  });
-  deviceController.displayGif({
-    id: AMDeviceScreen.Right,
-    /**
-     * [Required]
-     */
-    base64Image: gifImage,
-    /**
-     * [Optional]
-     */
-    imageName: 'ledger.gif',
-  });
-});
-document.getElementById('display-image-all')?.addEventListener('click', () => {
-  const screenManager = new AMScreenManager(new AMDeviceScreenController(), new AMSimulatorDeviceController());
-  screenManager.displayImage({
-    id: AMDeviceScreen.Left,
-    /**
-     * [Required] for setting in simulator
-     */
-    base64Image: jpgImage,
-    /**
-     * [Required] for setting in device
-     */
-    imageName: 'moon-it.jpeg',
-  });
-  screenManager.displayImage({
-    id: AMDeviceScreen.Right,
-    /**
-     * [Required] for setting in simulator
-     */
-    base64Image: jpgImage,
-    /**
-     * [Required] for setting in device
-     */
-    imageName: 'moon-it.jpeg',
-  });
-});
-document.getElementById('display-gif-all')?.addEventListener('click', () => {
-  const screenManager = new AMScreenManager(new AMDeviceScreenController(), new AMSimulatorDeviceController());
-  screenManager.displayGif({
-    id: AMDeviceScreen.Left,
-    /**
-     * [Required] for setting in simulator
-     */
-    base64Image: gifImage,
-    /**
-     * [Required] for setting in device
-     */
-    imageName: 'ledger.gif',
-  });
-  screenManager.displayGif({
-    id: AMDeviceScreen.Right,
-    /**
-     * [Required] for setting in simulator
-     */
-    base64Image: gifImage,
-    /**
-     * [Required] for setting in device
-     */
+  airmoneyService.setAnimate({
+    id: AMServiceScreen.Right,
     imageName: 'ledger.gif',
   });
 });
 
 window.onload = () => {
-  const keyEventListener = new AMKeyEventListener({
+  const keyEventListener = new AirMoneyKeyEvent({
     combinations: {
       combination: [AMKey.RotaryButton, AMKey.SideButton],
     },
@@ -171,7 +39,7 @@ window.onload = () => {
     debug: true,
   });
 
-  keyEventListener.on((event) => {
+  keyEventListener.on((event: AMEvent<'key-event'>) => {
     console.log('key event', event);
   });
 };

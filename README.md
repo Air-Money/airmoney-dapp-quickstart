@@ -43,12 +43,18 @@ To facilitate the project setup process we added a template option that will clo
 After creating the new project you have to update the `metadata.json` with your info<br>
 ```json
 {
-    "name": "quickstart-pack",
-    "identifier": "com.degn.quickstart-pack",
-    "author": "john doe",
-    "version": "0.1.0",
-    "maintainer": "john doe",
-    "url": "https://github.com/Air-Money/airmoney-dapp-quickstart"
+  "name": "quickstart-pack",
+  "displayName": "Quickstart Pack",
+  "identifier": "com.degn.quickstart-pack",
+  "author": "john doe",
+  "maintainer": "john doe",
+  "url": "https://github.com/Air-Money/airmoney-dapp-quickstart",
+  "themeColor": "#C4C4C4",
+  "version": "0.1.0",
+  "whatsNew": "",
+  "buildNumber": "",
+  "commitHash": "",
+  "buildDate": ""
 }
 ```
 
