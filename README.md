@@ -9,7 +9,7 @@ This document will help you create and publish your first dapp
 Contact the Airmoney team and share your Solana wallet address to be whitelisted
 
 ## Install airmoney-cli
-Install by running `npm install airmoney-cli -g`
+Install by running `npm install -g @airmoney-degn/airmoney-cli`
 
 ## Register developer
 1) access https://dash-devnet.air.fun/ and authenticate with your browser wallet
@@ -82,7 +82,7 @@ server:{
 }
 ```
 
-**Note - the simulator is currently intended to help simulate the UI/UX of the device's various screens and buttons/dials. Functionality like wallet, camera, fingerprint sensor etc are not currently part of the simulator. We are looking to include these in a future version
+**Note - the simulator is currently intended to help simulate the UI/UX of the device's various screens and buttons/dials. Functionality like camera, fingerprint sensor etc are not currently part of the simulator. We are looking to include these in a future version
 
 ```
 Usage: airmoney-cli serve [options]
@@ -106,3 +106,12 @@ After the dapp is successfully submitted, you will need to check the packages in
 Select the appropriate Category for your dapp and then click **Register Dapp**<br>
 
 Then finally click on the action button **Sign and Submit**
+
+## Keyboard bindings
+- `Left arrow`: left button
+- `Right arrow`: right button
+- `Up arrow` (press and hold): Balance button
+- `Down arrow`: Mute
+- `Enter`: rotary knob press
+- `[ key`: clockwise rotary
+- `] key`: counter clockwise rotary
