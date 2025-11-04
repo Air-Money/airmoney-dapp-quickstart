@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@airmoney-degn/controller-sdk": "^7.2.0",
+    "@airmoney-degn/controller-sdk": "^7.7.0",
     "@airmoney-degn/react-ui": "^10.0.0",
     "@tailwindcss/vite": "^4.1.15",
     "react": "^19.1.1",
