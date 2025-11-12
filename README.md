@@ -19,4 +19,4 @@ npm run build
 airmoney-cli serve -f dist
 ```
 
-For more detailed information, visit [https://airmoney-degn.github.io/quick-start](https://airmoney-degn.github.io/quick-start)
+For more detailed information, visit [https://airmoney-degn.github.io/quickstart](https://airmoney-degn.github.io/quickstart)
